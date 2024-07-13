@@ -1,0 +1,11 @@
+<!-- Add Filter -->
+
+<div class="puppy-list-wrapper">
+    @if(puppies){
+        @for (puppy of puppies; track puppy.name){
+            <app-puppy-card [puppy]="puppy"></app-puppy-card>
+        }
+    } @else {
+        <h1>No Puppies Available For Adoption</h1>
+    }
+</div>

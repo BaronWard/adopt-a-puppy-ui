@@ -1,0 +1,23 @@
+.puppy-card{
+    width: 350px;
+    height: 660px;
+    border: 1px solid black;
+
+    &:hover{
+        cursor: pointer;
+    }
+
+    img{
+        margin: 10px 10px;
+        width: auto;
+        height: 60%;
+        object-fit: contain;
+        align-self: center;
+    }
+
+    mat-card-content{
+        ul{
+            margin: 0px;
+        }
+    }
+}

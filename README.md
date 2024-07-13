@@ -6,6 +6,21 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 This project was created by Elward Joshua Crianza.
 
+Planned Userflow is as follows:
+1. Landing page will be display of list of puppies
+    1.a User should be able to filter list of puppies
+    1.b Admin should be shown manage list button
+        1.b.1 Admin should see X button on upper right corner to delete puppy from records
+        1.b.2 A "+" tile should be available to add puppy to list
+2. Side Nav Bar
+    2.a Contain a link to home page
+    2.b Contain a link to login modal
+3. Puppy Details Page
+    3.a User should see Puppy Details
+    3.b User should see Adopt Puppy (Show adoption form modal)
+
+NOTE: PLEASE NOTE THAT ADDITION/DELETION/UPDATE OF PUPPIES WILL BE SAVED PER SESSION
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.

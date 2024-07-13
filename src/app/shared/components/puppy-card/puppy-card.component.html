@@ -1,0 +1,20 @@
+<mat-card class="puppy-card" (click)="navigateToDetails(puppy.id)">
+    <mat-card-header class="puppy-card-header">
+        <strong>
+            {{puppy.name}}
+        </strong>
+        <!-- TO-DO ADD BUTTON HERE TO DELETE IF USER ADMIN IS SIGNED IN -->
+    </mat-card-header>
+    <img src="{{puppy.photoUrl}}" alt="puppy">
+    <mat-card-content>
+        <p>Age: {{puppy.age}}</p>
+        <p>Gender: {{puppy.gender | titlecase}}</p>
+        <p>Breed: {{puppy.breed}}</p>
+        <p>Traits:</p>
+        <ul>
+            @for (trait of puppy.traits.slice(0,2); track $index) {
+                <li>{{trait}}</li>
+            }
+        </ul>
+    </mat-card-content>
+</mat-card>

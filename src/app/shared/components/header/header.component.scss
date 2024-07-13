@@ -1,0 +1,18 @@
+.header-wrapper{
+    height: 50px;
+    align-items: center;
+    border-bottom: 2px solid black;
+
+    .spacer{
+        flex: 1 1 auto
+    }
+
+    button{
+        border: none;
+        background: none;
+
+        &:hover{
+            cursor: pointer;
+        }
+    }
+}
