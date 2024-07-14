@@ -1,14 +1,39 @@
 <div class="sorting-wrapper">
-    
-    <mat-form-field>
-        <mat-label>Search</mat-label>
-        <input matInput type="text" [(ngModel)]="searchQuery" (ngModelChange)="filterPuppiesArray(searchQuery)">
-        @if (searchQuery) {
-            <button matSuffix mat-icon-button aria-label="Clear" (click)="searchQuery=''">
-              <mat-icon>close</mat-icon>
-            </button>
-          }
-    </mat-form-field>
+    <mat-toolbar-row>
+        <mat-form-field class="search-wrapper" subscriptSizing="dynamic" appearance="outline">
+            <mat-label>Search</mat-label>
+            <input matInput type="text" [(ngModel)]="searchQuery" (ngModelChange)="filterPuppiesArray(searchQuery)">
+            @if (searchQuery) {
+                <button matSuffix mat-icon-button aria-label="Clear" (click)="searchQuery=''">
+                  <mat-icon>close</mat-icon>
+                </button>
+            }
+        </mat-form-field>
+        <mat-divider [vertical]="true" [inset]="false" class="vert-divider"></mat-divider>
+        <div class="filter-wrapper">
+
+        </div>
+        <span>Filter Options: </span>
+        <form [formGroup]="filterGroup" (ngSubmit)="filterPuppies()">
+            <mat-form-field subscriptSizing="dynamic" appearance="outline" class="filter-field">
+                <mat-label>Age</mat-label>
+                <input matInput type="text" formControlName="age">
+            </mat-form-field>
+            <mat-form-field subscriptSizing="dynamic" appearance="outline" class="filter-field">
+                <mat-label>Breed</mat-label>
+                <input matInput type="text" formControlName="breed">
+            </mat-form-field>
+            <mat-form-field subscriptSizing="dynamic" appearance="outline" class="filter-field">
+                <mat-label>Gender</mat-label>
+                <input matInput type="text" formControlName="gender">
+            </mat-form-field>
+            <mat-form-field subscriptSizing="dynamic" appearance="outline" class="filter-field">
+                <mat-label>Size</mat-label>
+                <input matInput type="text" formControlName="size">
+            </mat-form-field>
+            <button mat-fab extended color="primary" type="submit" aria-label="Apply Filter">Apply Filter</button>
+        </form>
+    </mat-toolbar-row>
 </div>
 <div class="puppy-list-wrapper">
     @if(displayedPuppies) {

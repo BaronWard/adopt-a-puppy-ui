@@ -1,5 +1,37 @@
 .sorting-wrapper{
     margin: 10px 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    .search-wrapper{
+        width: 400px;
+        margin: 0px 10px;
+    }
+
+    .vert-divider{
+        height: 100%;
+    }
+
+    span{
+        margin: 0px 10px;
+    }
+
+    button{
+        width: 100px;
+    }
+
+    .filter-wrapper{
+        form{
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+        }
+    }
+    
+    .filter-field{
+        margin: 5px;
+    }
 }
 
 .puppy-list-wrapper{

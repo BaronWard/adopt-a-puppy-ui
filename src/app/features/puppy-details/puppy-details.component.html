@@ -1,3 +1,39 @@
-<div>
-    <p>Current puppy ID is : {{puppyId}}</p>
+@let puppyDetails = puppy | async;
+<div class="puppy-details-container">
+    <mat-grid-list cols="2" rowHeight="100%">
+        <mat-grid-tile
+            [colspan]="1"
+            [rowspan]="1">
+            <img [src]="puppyDetails?.photoUrl" alt="puppy image">
+        </mat-grid-tile>
+        <mat-grid-tile
+            [colspan]="1"
+            [rowspan]="1">
+        <mat-card class="puppy-info-card">
+            <mat-card-header>
+                <mat-card-title><strong>{{puppyDetails?.name}}</strong></mat-card-title>
+            </mat-card-header>
+            <mat-card-content class="content">
+                <p>Age: {{puppyDetails?.age}}</p>
+                <p>Gender: {{puppyDetails?.gender | titlecase}}</p>
+                <p>Is Vaccinated: {{puppyDetails?.isVaccinated ? 'Yes' : 'No'}}</p>
+                <p>Is Neutered: {{puppyDetails?.isNeutered ? 'Yes' : 'No'}}</p>
+                <p>Size: {{puppyDetails?.size}}</p>
+                <p>Breed: {{puppyDetails?.breed}}</p>
+                <p>Traits:</p>
+                <ul>
+                    @for (trait of puppyDetails?.traits; track $index) {
+                        <li>{{trait}}</li>
+                    }
+                </ul>
+            </mat-card-content>
+            <mat-card-actions class="puppy-info-cta">
+                <button mat-fab extended (click)="openAdoptionForm()">
+                    <mat-icon>home</mat-icon>
+                    Apply for Adoption
+                </button>
+            </mat-card-actions>
+        </mat-card>
+        </mat-grid-tile>
+    </mat-grid-list>
 </div>

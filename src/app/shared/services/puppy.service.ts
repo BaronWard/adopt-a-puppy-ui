@@ -8,11 +8,19 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class PuppyService {
-  httpService = inject(HttpService)
+  private httpService = inject(HttpService)
 
   constructor() { }
 
   getAllPuppies() : Observable<Array<Puppy>> {
     return this.httpService.get(`${PUPPY_API.BASE}`)
+  }
+
+  filterPuppies(filters: any): Observable<Array<Puppy>> {
+    return this.httpService.get(`${PUPPY_API.FILTER}?age=${filters.age.toLowerCase() ?? ''}&breed=${filters.breed.toLowerCase() ?? ''}&gender=${filters.gender.toLowerCase() ?? ''}&size=${filters.size.toLowerCase() ?? ''}`)
+  }
+
+  getPuppyDetails(puppyId: number): Observable<Puppy> {
+    return this.httpService.get(`${PUPPY_API.BASE}/${puppyId}`)
   }
 }

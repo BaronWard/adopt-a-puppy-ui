@@ -1,0 +1,30 @@
+<form [formGroup]="applicationFormGroup" (ngSubmit)="submitApplication()">
+<h2 mat-dialog-title>Submit Adoption Application</h2>
+<mat-dialog-content class="form-content">
+        <h6>Please provide the following details</h6>
+        <div class="formField">
+            <p><strong>Full Name</strong></p>
+            <mat-form-field subscriptSizing="dynamic" appearance="fill" class="filter-field">
+                <mat-label>Full Name</mat-label>
+                <input matInput type="text" formControlName="name">
+            </mat-form-field>
+        </div>
+        <div class="formField">
+            <p><strong>Contact Number</strong></p>
+            <mat-form-field subscriptSizing="dynamic" appearance="fill" class="filter-field">
+                <mat-label>Contact Number</mat-label>
+                <input matInput type="number" formControlName="contactNumber">
+            </mat-form-field>
+        </div>
+        <div class="formField">
+            <p><strong>Home Address</strong></p>
+            <mat-form-field subscriptSizing="dynamic" appearance="fill" class="filter-field">
+                <mat-label>Home Address</mat-label>
+                <input matInput type="text" formControlName="homeAddress">
+            </mat-form-field>
+        </div>
+    </mat-dialog-content>
+    <mat-dialog-actions>
+        <button mat-fab extended color="primary" type="submit" aria-label="Apply Filter">Submit Application</button>
+    </mat-dialog-actions>
+</form>
