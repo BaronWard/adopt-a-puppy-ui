@@ -1,4 +1,4 @@
 export const environment = {
-    production: false,
-    BASE_API_URL: 'https://localhost:7250/'
+    production: true,
+    BASE_API_URL: 'https://adopt-a-puppy-testapp.azurewebsites.net/'
 }
